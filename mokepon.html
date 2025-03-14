@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOKEPON!</title>
+    <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="./styles/mokepon.css" />
+  </head>
+  <body>
+    <h1>MOKEPON!✨</h1>
+    <section id="seleccionar-mascota">
+      <h2>Elige tu mascota</h2>
+
+      <label for="hipodoge">Hipodoge</label>
+      <input type="radio" name="mascota" id="hipodoge" />
+
+      <label for="capipepo">Capipepo</label>
+      <input type="radio" name="mascota" id="capipepo" />
+
+      <label for="ratigueya">Ratigueya</label>
+      <input type="radio" name="mascota" id="ratigueya" />
+
+      <button id="boton-mascota" class="seleccionar">SELECCIONAR</button>
+    </section>
+    <section id="seleccionar-ataque">
+      <h2>Elige tu ataque</h2>
+
+      <p>
+        Tu mascota <span id="mascota-jugador"></span> tiene
+        <span id="vidas-jugador">3</span> vidas
+      </p>
+      <p>
+        La mascota <span id="mascota-enemigo"></span> del enemigo tiene
+        <span id="vidas-enemigo">3</span> vidas
+      </p>
+
+      <p>
+        <button id="boton-fuego" class="fuego">Fuego 🔥</button>
+        <button id="boton-agua" class="agua">Agua 💧</button>
+        <button id="boton-tierra" class="tierra">Tierra 🌿</button>
+      </p>
+    </section>
+    <section id="mensajes">
+      <p id="p1"></p>
+    </section>
+    <section>
+      <div id="ganaste-modal" class="modal">
+        <div class="modal-content">
+          <span class="cerrar">&times;</span>
+          <h2 id="texto">FELICITACIONES, HAS GANADO 🤩.</h2>
+          <button id="again" class="over">JUGAR DE NUEVO 🙌🏻</button>
+        </div>
+      </div>
+    </section>
+    <section id="reiniciar">
+      <button id="boton-reiniciar" class="btn-reiniciar">REINICIAR</button>
+    </section>
+  </body>
+</html>

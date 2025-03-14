@@ -1,0 +1,112 @@
+body {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-color: #81123e;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Fondo modal: negro con opacidad al 50% */
+.modal {
+  display: none; /* Por defecto, estará oculto */
+  position: fixed; /* Posición fija */
+  z-index: 1; /* Se situará por encima de otros elementos de la página*/
+  padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Algura completa */
+  overflow: auto; /* Se activará el scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+}
+
+.modal-content {
+  position: relative; /* Relativo con respecto al contenedor -modal- */
+  background-color: #387f80;
+  justify-content: center;
+  align-content: center;
+  margin: auto; /* Centrada */
+  padding: 20px;
+  width: 40%;
+  animation-name: animarsuperior;
+  animation-duration: 0.5s;
+  border-radius: 15px;
+}
+
+.seleccionar {
+  background-color: #025c77;
+  border: 1px solid #a8a4a4;
+  letter-spacing: 0.2em;
+  color: white;
+  padding: 10px 17px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más difuminada */
+  cursor: pointer;
+  margin: 0; /* Elimina márgenes */
+  display: inline-block;
+}
+.btn-reiniciar {
+  letter-spacing: 0.2em;
+}
+
+.fuego,
+.agua,
+.tierra,
+.btn-reiniciar,
+.over {
+  background-color: #fbf5f8;
+  border: 1px solid #a8a4a4;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más difuminada */
+  cursor: pointer;
+  margin: 0; /* Elimina márgenes */
+  display: inline-block;
+}
+
+.fuego:hover,
+.agua:hover,
+.tierra:hover,
+.btn-reiniciar:hover,
+.over:hover {
+  background-color: #c6c3c4;
+}
+.seleccionar:hover {
+  background-color: #014b61;
+}
+
+/* Add Animation */
+@keyframes animarsuperior {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.cerrar {
+  color: black;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
