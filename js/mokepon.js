@@ -10,9 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let botonAgua = document.getElementById("boton-agua");
   let botonTierra = document.getElementById("boton-tierra");
   let botonReiniciar = document.getElementById("boton-reiniciar");
-  let ganarModal = document.getElementById("ganaste-modal");
-  let span = document.getElementsByClassName("cerrar")[0];
   let botonAgain = document.getElementById("again");
+  let ganarModal = document.getElementById("ganaste-modal");
+  let seccionMascota = document.getElementById("seleccionar-mascota");
+  let seccionReiniciar = document.getElementById("reiniciar");
+  let seccionAtaque = document.getElementById("seleccionar-ataque");
+  let span = document.getElementsByClassName("cerrar")[0];
 
   botonMascota.addEventListener("click", seleccionarMascotaJugador);
   botonFuego.addEventListener("click", ataqueFuego);
@@ -24,8 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
     reiniciarJuego();
   });
 
+  seccionAtaque.style.display = "none";
+  seccionReiniciar.style.display = "none";
+
   span.addEventListener("click", function () {
     ganarModal.style.display = "none";
+    seccionReiniciar.style.display = "block";
   });
 
   function seleccionarMascotaJugador() {
@@ -33,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let capipepo = document.getElementById("capipepo");
     let ratigueya = document.getElementById("ratigueya");
     let spanMascotaJugador = document.getElementById("mascota-jugador");
+    seccionAtaque.style.display = "block";
+    seccionMascota.style.display = "none";
 
     if (hipodoge.checked) {
       spanMascotaJugador.innerHTML = "Hipodoge";
@@ -136,6 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function gameOver() {
     if (vidasEnemigo == 0) {
       ganarModal.style.display = "block";
+      botonFuego.disabled = true;
+      botonAgua.disabled = true;
+      botonTierra.disabled = true;
     } else if (vidasJugador == 0) {
       perdiste();
     }
@@ -147,21 +159,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let modalContenido = document.getElementsByClassName("modal-content")[0];
     texto.innerHTML = "HAS PERDIDO 😭.";
     modalContenido.style.backgroundColor = "#ed6d52";
+    botonFuego.disabled = true;
+    botonAgua.disabled = true;
+    botonTierra.disabled = true;
   }
 
   function reiniciarJuego() {
-    let spanVidasEnemigo = document.getElementById("vidas-enemigo");
-    let spanVidasJugador = document.getElementById("vidas-jugador");
-    let seccionMensajes = document.getElementById("mensajes");
-
-    vidasEnemigo = 3;
-    vidasJugador = 3;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
-    spanVidasJugador.innerHTML = vidasJugador;
-
-    while (seccionMensajes.firstChild) {
-      seccionMensajes.removeChild(seccionMensajes.lastChild);
-    }
+    location.reload();
   }
 
   function aleatorio(min, max) {

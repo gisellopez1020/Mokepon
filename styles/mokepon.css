@@ -7,9 +7,13 @@ body {
   height: 100vh;
   width: 100vw;
   text-align: center;
-  background-color: #81123e;
+  background: linear-gradient(to right, #81123e, #934263);
   color: white;
   overflow-x: hidden;
+}
+
+.titulo {
+  font-size: 38px;
 }
 
 /* Fondo modal: negro con opacidad al 50% */
