@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let seccionReiniciar = document.getElementById("reiniciar");
   let seccionAtaque = document.getElementById("seleccionar-ataque");
   let span = document.getElementsByClassName("cerrar")[0];
+  const tarjetas = document.querySelectorAll(".tarjeta-de-mokepon");
 
   botonMascota.addEventListener("click", seleccionarMascotaJugador);
   botonFuego.addEventListener("click", ataqueFuego);
@@ -33,6 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
   span.addEventListener("click", function () {
     ganarModal.style.display = "none";
     seccionReiniciar.style.display = "block";
+  });
+
+  tarjetas.forEach((tarjeta) => {
+    tarjeta.addEventListener("click", () => {
+      // Remueve la clase "seleccionado" de todas las tarjetas antes de aplicar a la actual
+      tarjetas.forEach((t) => t.classList.remove("seleccionado"));
+
+      // Agrega la clase "seleccionado" a la tarjeta que se ha clickeado
+      tarjeta.classList.add("seleccionado");
+    });
   });
 
   function seleccionarMascotaJugador() {

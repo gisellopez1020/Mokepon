@@ -6,38 +6,38 @@
     <title>MOKEPON!</title>
     <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./styles/mokepon.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+    </style>
   </head>
   <body>
-    <h1 class="titulo">MOKEPON!✨</h1>
     <section id="seleccionar-mascota">
+      <h1 class="titulo">MOKEPON!✨</h1>
       <h2 class="subt">Elige tu mascota</h2>
       <div id="tarjetas">
         <label class="tarjeta-de-mokepon" for="hipodoge">
           <img src="./img/hipodoge.png" height="100px" width="100px" />
-          <br />Hipodoge
+          <p>Hipodoge</p>
         </label>
         <input type="radio" name="mascota" id="hipodoge" />
 
         <label class="tarjeta-de-mokepon" for="capipepo">
           <img src="./img/capipepo.png" height="100px" width="100px" />
-          <br />Capipepo
+          <p>Capipepo</p>
         </label>
         <input type="radio" name="mascota" id="capipepo" />
 
         <label class="tarjeta-de-mokepon" for="ratigueya">
           <img src="./img/ratigueya.png" height="100px" width="100px" />
-          <br />Ratigueya
+          <p>Ratigueya</p>
         </label>
         <input type="radio" name="mascota" id="ratigueya" />
       </div>
 
       <button id="boton-mascota" class="seleccionar">SELECCIONAR</button>
     </section>
-    <section id="imagen-mascota">
-      <img src="" />
-    </section>
     <section id="seleccionar-ataque">
-      <h2>Elige tu ataque</h2>
+      <h2 class="subt">Elige tu ataque</h2>
 
       <p>
         Tu mascota <span id="mascota-jugador"></span> tiene
@@ -57,6 +57,7 @@
     <section id="mensajes">
       <p id="p1"></p>
     </section>
+
     <section>
       <div id="ganaste-modal" class="modal">
         <div class="modal-content">

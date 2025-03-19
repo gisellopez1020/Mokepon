@@ -2,16 +2,19 @@
   padding: 0;
   margin: 0;
 }
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
 body {
-  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-family: "Fredoka";
   text-align: center;
-  background: linear-gradient(to right, #81123e, #934263);
+  background-image: url("../img/fondo.jpg");
+  background-size: 100%;
+  background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -25,46 +28,85 @@ body {
 #tarjetas {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .subt {
-  margin-bottom: 15px; /* Espacio entre el título y las tarjetas */
-  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-size: 2.25em;
   font-weight: bold;
+  text-shadow: 2px 2px 0px #0000008e;
+  text-shadow: 1.2px 1.2px 0 #000, -1.2px 1.2px 0 #000, -1.2px -1.2px 0 #000,
+    1.2px -1.2px 0 #000;
+  letter-spacing: 4px;
+}
+
+p {
+  letter-spacing: 2px;
 }
 
 .titulo {
-  font-size: 38px;
+  height: 120px;
+  font-family: "Fredoka";
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 5rem;
+}
+
+input {
+  display: none;
 }
 
 .tarjeta-de-mokepon {
-  background: rgba(158, 157, 157, 0.484);
+  background: #077495cc;
   width: 150px;
   height: 150px;
   padding: 10px;
   box-sizing: border-box;
+  border: 2px solid rgba(245, 245, 245, 0.66);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-out;
 }
-/* Fondo modal: negro con opacidad al 50% */
+
+.tarjeta-de-mokepon:hover {
+  cursor: pointer;
+  background-color: #fbf5f8;
+  color: #077495cc;
+  border: 2px solid #077495cc;
+}
+
+.tarjeta-de-mokepon.seleccionado {
+  transform: scale(0.95);
+  background-color: #055b6e;
+  border: 2px solid white;
+  color: white;
+}
+
 .modal {
-  display: none; /* Por defecto, estará oculto */
-  position: fixed; /* Posición fija */
-  z-index: 1; /* Se situará por encima de otros elementos de la página*/
-  padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 200px;
   left: 0;
   top: 0;
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Algura completa */
-  overflow: auto; /* Se activará el scroll si es necesario */
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-  position: relative; /* Relativo con respecto al contenedor -modal- */
+  position: relative;
   background-color: #387f80;
   justify-content: center;
   align-content: center;
-  margin: auto; /* Centrada */
+  margin: auto;
   padding: 20px;
   width: 40%;
   animation-name: animarsuperior;
@@ -73,19 +115,23 @@ body {
 }
 
 .seleccionar {
+  font-family: "Fredoka";
   background-color: #025c77;
-  border: 1px solid #a8a4a4;
+  border: 1.5px solid #ffffff;
   letter-spacing: 0.2em;
   color: white;
   padding: 10px 17px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más difuminada */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: inline-block;
-  margin-top: 15px;
+  text-shadow: 0.5px 0.5px 0 #000, -0.5px 0.5px 0 #000, -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000;
+  margin-top: 30px;
 }
+
 .btn-reiniciar {
   letter-spacing: 0.2em;
 }
@@ -101,7 +147,7 @@ body {
   font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más difuminada */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: inline-block;
 }
